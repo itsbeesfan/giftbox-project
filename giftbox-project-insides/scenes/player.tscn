@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ng2ojdgtrlou"]
+
+[ext_resource type="Texture2D" uid="uid://wfm0fbxs35p2" path="res://sprites/panda-running.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://ptn0a46fwa30" path="res://scripts/player_controller.gd" id="1_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 9.0
+height = 38.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -15)
+zoom = Vector2(4.5, 4.5)
+
+[node name="AgentAnimator" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AgentAnimator"]
+root_node = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
+position = Vector2(2.3841858e-07, -24)
+scale = Vector2(1.4375, 1.4375)
+texture = ExtResource("1_3vyb7")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19)
+shape = SubResource("CapsuleShape2D_onrkg")
