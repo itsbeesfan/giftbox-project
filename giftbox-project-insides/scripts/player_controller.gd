@@ -5,11 +5,20 @@ extends CharacterBody2D
 @export var move_speed := 150.0
 @export var air_control := 0.75
 
+@onready var panda = $AnimatedSprite2D
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta) -> void:
+	
+	if (velocity.x > 1 or velocity.x <-1):
+		panda.animation = "walk"
+	else:
+		panda.animation = "idle"
+	# Add the gravity.
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
