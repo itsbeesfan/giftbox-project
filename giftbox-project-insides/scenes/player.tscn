@@ -89,7 +89,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 9.0
-height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
@@ -105,5 +104,5 @@ offset = Vector2(0, -15)
 zoom = Vector2(4.5, 4.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -19)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_onrkg")
