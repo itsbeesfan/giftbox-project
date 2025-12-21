@@ -14,9 +14,9 @@ const JUMP_VELOCITY = -400.0
 func _physics_process(delta) -> void:
 	
 	if (velocity.x > 1 or velocity.x <-1):
-		panda.animation = "walk"
+		panda.play("walk")
 	else:
-		panda.animation = "idle"
+		panda.play("idle")
 	# Add the gravity.
 	
 	# Add the gravity.
@@ -35,5 +35,8 @@ func _physics_process(delta) -> void:
 	var control = air_control if not is_on_floor() else 1.0
 	
 	velocity.x = lerp(velocity.x, direction * move_speed, control * 0.1)
-
+	
+	var isLeft = velocity.x < 0
+	panda.flip_h = isLeft
+	
 	move_and_slide()
