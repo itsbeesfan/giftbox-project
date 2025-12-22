@@ -7,11 +7,16 @@ extends CharacterBody2D
 
 @onready var panda = $AnimatedSprite2D
 
+var can_move := true
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 
 func _physics_process(delta) -> void:
+	if not can_move:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 	
 	if (velocity.x > 1 or velocity.x <-1):
 		panda.play("walk")
