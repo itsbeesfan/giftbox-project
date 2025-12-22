@@ -220,16 +220,16 @@ layer_0/tile_data = PackedInt32Array(2424833, 589824, 0, 2490369, 589824, 1, 255
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_dgl8q")]
 position = Vector2(125, 527)
 
-[node name="Note_1" parent="." instance=ExtResource("5_hvyvl")]
-position = Vector2(1351, 512)
-
-[node name="Note_2" parent="." instance=ExtResource("5_hvyvl")]
-position = Vector2(2073, 497)
-
-[node name="Note_3" parent="." instance=ExtResource("5_hvyvl")]
-position = Vector2(758, 577)
-
-[node name="Note_4" parent="." instance=ExtResource("5_hvyvl")]
-position = Vector2(392, 432)
-
 [node name="note_window" parent="." instance=ExtResource("6_eme25")]
+
+[node name="Note1" parent="." instance=ExtResource("5_hvyvl")]
+position = Vector2(2068, 494)
+
+[node name="Note2" parent="." instance=ExtResource("5_hvyvl")]
+position = Vector2(1363, 501)
+
+[node name="Note3" parent="." instance=ExtResource("5_hvyvl")]
+position = Vector2(767, 574)
+
+[node name="Note4" parent="." instance=ExtResource("5_hvyvl")]
+position = Vector2(403, 435)

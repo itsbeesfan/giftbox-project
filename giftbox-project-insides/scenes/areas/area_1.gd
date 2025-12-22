@@ -10,15 +10,16 @@ func _ready() -> void:
 	$note_window.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta):
 	if Input.is_action_just_pressed("open"):
 		print("PRESIONASTE EEEE EPAAA")
 		if reading:
 			close_note()
-		elif current_note:
+		elif current_note != null:
 			open_note(current_note)
-			
+		
 func open_note(note):
+	print("haz llamado a open note")
 	reading = true
 	note_window.visible = true
 	note_text.text = note.message
