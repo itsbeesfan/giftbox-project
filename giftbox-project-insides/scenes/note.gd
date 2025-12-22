@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var message := "piensa en un mensaje re abstracto que decidiras luego, sisi."
+@export var message := "aaaaa."
 
 
 
