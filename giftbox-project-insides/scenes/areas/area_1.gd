@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var note_window = $note_window
-@onready var note_text = $note_window/Panel/RichTextLabel
+@onready var note_text = $note_window/TextureRect/RichTextLabel
 
 var current_note = null
 var reading := false

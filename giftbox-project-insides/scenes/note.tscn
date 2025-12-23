@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://myc8c2n875cg"]
 
-[ext_resource type="Script" uid="uid://bh7a1qyitqi3g" path="res://scenes/note.gd" id="1_1bnk6"]
+[ext_resource type="Script" uid="uid://bh7a1qyitqi3g" path="res://scripts/note.gd" id="1_1bnk6"]
 [ext_resource type="Texture2D" uid="uid://c07o50mw6ob1r" path="res://sprites/message-in-a-bottle.png" id="1_t3yvt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1bnk6"]
