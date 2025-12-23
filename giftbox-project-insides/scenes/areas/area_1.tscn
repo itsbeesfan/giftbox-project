@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3pao7he67ks5"]
+[gd_scene load_steps=10 format=3 uid="uid://b3pao7he67ks5"]
 
 [ext_resource type="Texture2D" uid="uid://blo236sn36ena" path="res://sprites/1_Industrial_Tileset_1.png" id="1_1gyh0"]
-[ext_resource type="Script" uid="uid://ecnatl5qacxj" path="res://scenes/areas/area_1.gd" id="1_ay52s"]
+[ext_resource type="Script" uid="uid://ecnatl5qacxj" path="res://scripts/area_1.gd" id="1_ay52s"]
 [ext_resource type="Texture2D" uid="uid://dgudkwarryj8k" path="res://sprites/Blue_Nebula_02-512x512.png" id="1_h3qae"]
 [ext_resource type="PackedScene" uid="uid://ng2ojdgtrlou" path="res://scenes/player.tscn" id="2_dgl8q"]
 [ext_resource type="PackedScene" uid="uid://myc8c2n875cg" path="res://scenes/note.tscn" id="5_hvyvl"]
+[ext_resource type="PackedScene" uid="uid://cpmyjwt5niuad" path="res://scenes/space_bubble.tscn" id="6_4pcq1"]
 [ext_resource type="PackedScene" uid="uid://be3yfcmqwbspa" path="res://scenes/note_window.tscn" id="6_eme25"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgl8q"]
@@ -239,5 +240,11 @@ message = "welcome to your observatory. the galaxy seems so big from here. look 
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_dgl8q")]
 position = Vector2(67, 340)
+
+[node name="spacebubble" parent="." instance=ExtResource("6_4pcq1")]
+position = Vector2(1560, 515)
+
+[node name="spacebubble2" parent="." instance=ExtResource("6_4pcq1")]
+position = Vector2(1772, 515)
 
 [node name="note_window" parent="." instance=ExtResource("6_eme25")]
