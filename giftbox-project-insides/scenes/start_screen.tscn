@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cfkpyhgpwrppw"]
+[gd_scene load_steps=2 format=3 uid="uid://cfkpyhgpwrppw"]
+
+[ext_resource type="Script" uid="uid://o5u7xm06ko0o" path="res://scenes/start_screen.gd" id="1_tx5wa"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tx5wa")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -72,3 +75,5 @@ offset_bottom = 38.42395
 grow_horizontal = 2
 grow_vertical = 0
 text = "Settings"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
