@@ -241,4 +241,3 @@ message = "welcome to your observatory. the galaxy seems so big from here. look 
 position = Vector2(67, 340)
 
 [node name="note_window" parent="." instance=ExtResource("6_eme25")]
-visible = false

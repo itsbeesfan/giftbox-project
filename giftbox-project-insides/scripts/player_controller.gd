@@ -1,14 +1,14 @@
 extends CharacterBody2D
 
-@export var gravity := 300.0
+@export var gravity := 270.0
 @export var jump_force := 200.0
-@export var move_speed := 150.0
+@export var move_speed := 125.0
 @export var air_control := 0.75
 
 @onready var panda = $AnimatedSprite2D
 
 var can_move := true
-const SPEED = 300.0
+const SPEED = 250.0
 const JUMP_VELOCITY = -400.0
 
 
