@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3pao7he67ks5"]
+[gd_scene load_steps=11 format=3 uid="uid://b3pao7he67ks5"]
 
 [ext_resource type="Texture2D" uid="uid://blo236sn36ena" path="res://sprites/1_Industrial_Tileset_1.png" id="1_1gyh0"]
-[ext_resource type="Script" uid="uid://ecnatl5qacxj" path="res://scripts/area_1.gd" id="1_ay52s"]
+[ext_resource type="Script" path="res://scripts/area_1.gd" id="1_ay52s"]
 [ext_resource type="Texture2D" uid="uid://dgudkwarryj8k" path="res://sprites/Blue_Nebula_02-512x512.png" id="1_h3qae"]
 [ext_resource type="PackedScene" uid="uid://ng2ojdgtrlou" path="res://scenes/player.tscn" id="2_dgl8q"]
 [ext_resource type="PackedScene" uid="uid://myc8c2n875cg" path="res://scenes/note.tscn" id="5_hvyvl"]
 [ext_resource type="PackedScene" uid="uid://cpmyjwt5niuad" path="res://scenes/space_bubble.tscn" id="6_4pcq1"]
 [ext_resource type="PackedScene" uid="uid://be3yfcmqwbspa" path="res://scenes/note_window.tscn" id="6_eme25"]
+[ext_resource type="AudioStream" uid="uid://b2emnv0wgkns1" path="res://sounds/music/Skyline To - Frank Ocean (Instrumental).mp3" id="8_vq5v6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgl8q"]
 texture = ExtResource("1_1gyh0")
@@ -220,7 +221,7 @@ layer_0/tile_data = PackedInt32Array(2424833, 589824, 0, 2490369, 589824, 1, 255
 
 [node name="Note1" parent="." instance=ExtResource("5_hvyvl")]
 position = Vector2(2068, 497)
-message = "i hope you enjoy this small experience i've made for you. happy holidays for you and your family <3"
+message = "i hope you enjoy this small experience. happy holidays for you and your family <3 (there's 5 notes. did you find them all?)"
 
 [node name="Note2" parent="." instance=ExtResource("5_hvyvl")]
 position = Vector2(1363, 513)
@@ -248,3 +249,8 @@ position = Vector2(1560, 515)
 position = Vector2(1772, 515)
 
 [node name="note_window" parent="." instance=ExtResource("6_eme25")]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_vq5v6")
+autoplay = true

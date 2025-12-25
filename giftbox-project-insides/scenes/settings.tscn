@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://csqml1use6fol"]
+
+[ext_resource type="Texture2D" uid="uid://dauisigm2pol3" path="res://sprites/settings-rect.png" id="1_es4n0"]
+[ext_resource type="FontFile" uid="uid://bklgmiflftow0" path="res://fonts/aseprite.otf" id="2_gis3k"]
+[ext_resource type="Texture2D" uid="uid://pyd75eh1voj6" path="res://sprites/settings-button.png" id="3_83j8s"]
+[ext_resource type="Texture2D" uid="uid://dprxxyv6bb88u" path="res://sprites/settings-button-pressed.png" id="4_gjs24"]
+[ext_resource type="Texture2D" uid="uid://7rhyvd7ot4l" path="res://sprites/settings-button-hovered.png" id="5_am25x"]
+
+[node name="Settings" type="TextureRect"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -172.5
+offset_right = 275.0
+offset_bottom = 172.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+texture = ExtResource("1_es4n0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.125
+anchor_right = 0.5
+anchor_bottom = 0.125
+offset_left = -101.5
+offset_top = -19.625
+offset_right = 101.5
+offset_bottom = 19.375
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_gis3k")
+theme_override_font_sizes/font_size = 35
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49600002
+anchor_top = 0.85400003
+anchor_right = 0.49600002
+anchor_bottom = 0.85400003
+offset_left = -88.05002
+offset_top = -25.130005
+offset_right = 92.44998
+offset_bottom = 25.369995
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("3_83j8s")
+texture_pressed = ExtResource("4_gjs24")
+texture_hover = ExtResource("5_am25x")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.24705882, 0.24705882, 0.45490196, 1)
+theme_override_fonts/font = ExtResource("2_gis3k")
+theme_override_font_sizes/font_size = 21
+text = "BACK"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.314
+anchor_right = 0.5
+anchor_bottom = 0.314
+offset_left = -137.25
+offset_top = -7.830002
+offset_right = 137.25
+offset_bottom = 8.169998
+grow_horizontal = 2
+grow_vertical = 2

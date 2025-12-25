@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2emnv0wgkns1"
+path="res://.godot/imported/Skyline To - Frank Ocean (Instrumental).mp3-dd7cd40936efc1c93557d87ff64b7180.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Skyline To - Frank Ocean (Instrumental).mp3"
+dest_files=["res://.godot/imported/Skyline To - Frank Ocean (Instrumental).mp3-dd7cd40936efc1c93557d87ff64b7180.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
