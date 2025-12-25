@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfkpyhgpwrppw"]
+[gd_scene load_steps=8 format=3 uid="uid://cfkpyhgpwrppw"]
 
 [ext_resource type="Script" uid="uid://o5u7xm06ko0o" path="res://scripts/start_screen.gd" id="1_tx5wa"]
 [ext_resource type="Texture2D" uid="uid://c6y5r15qe5axe" path="res://sprites/button-normal.png" id="2_r2jwc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bpnnxgvwgpi4" path="res://sprites/button-hovered.png" id="4_5pab1"]
 [ext_resource type="FontFile" uid="uid://bklgmiflftow0" path="res://fonts/aseprite.otf" id="5_hm208"]
 [ext_resource type="AudioStream" uid="uid://de6aie6tyxqvf" path="res://sounds/sfx/select-sfx.mp3" id="6_5pab1"]
+[ext_resource type="PackedScene" uid="uid://csqml1use6fol" path="res://scenes/settings.tscn" id="7_o30b1"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -36,7 +37,29 @@ offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start" type="TextureButton" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5pab1")
+pitch_scale = 0.68
+bus = &"SFX"
+
+[node name="Settings2" parent="." instance=ExtResource("7_o30b1")]
+visible = false
+layout_mode = 1
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.87000006
+anchor_right = 0.5
+anchor_bottom = 0.87000006
+offset_left = -438.75
+offset_top = -51.76007
+offset_right = 438.75
+offset_bottom = 52.23993
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Start" type="TextureButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -44,16 +67,16 @@ anchor_top = 0.86200005
 anchor_right = 0.5
 anchor_bottom = 0.86200005
 offset_left = -127.0
-offset_top = -38.57605
+offset_top = -81.648
 offset_right = 127.0
-offset_bottom = 38.42395
+offset_bottom = -4.647995
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("2_r2jwc")
 texture_pressed = ExtResource("3_hm208")
 texture_hover = ExtResource("4_5pab1")
 
-[node name="Label" type="Label" parent="Start"]
+[node name="Label" type="Label" parent="Buttons/Start"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,24 +94,24 @@ theme_override_font_sizes/font_size = 35
 text = "START"
 horizontal_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="."]
+[node name="Quit" type="TextureButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.73800004
 anchor_top = 0.86200005
 anchor_right = 0.73800004
 anchor_bottom = 0.86200005
-offset_left = -127.176025
-offset_top = -38.57605
-offset_right = 126.823975
-offset_bottom = 38.42395
+offset_left = -61.84503
+offset_top = -81.648
+offset_right = 192.15497
+offset_bottom = -4.647995
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("2_r2jwc")
 texture_pressed = ExtResource("3_hm208")
 texture_hover = ExtResource("4_5pab1")
 
-[node name="Label" type="Label" parent="Quit"]
+[node name="Label" type="Label" parent="Buttons/Quit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -106,24 +129,24 @@ theme_override_font_sizes/font_size = 35
 text = "QUIT"
 horizontal_alignment = 1
 
-[node name="Settings" type="TextureButton" parent="."]
+[node name="Settings" type="TextureButton" parent="Buttons"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.26200002
 anchor_top = 0.86200005
 anchor_right = 0.26200002
 anchor_bottom = 0.86200005
-offset_left = -126.824036
-offset_top = -38.57605
-offset_right = 127.175964
-offset_bottom = 38.42395
+offset_left = -192.15501
+offset_top = -81.648
+offset_right = 61.844986
+offset_bottom = -4.647995
 grow_horizontal = 2
 grow_vertical = 0
 texture_normal = ExtResource("2_r2jwc")
 texture_pressed = ExtResource("3_hm208")
 texture_hover = ExtResource("4_5pab1")
 
-[node name="Label" type="Label" parent="Settings"]
+[node name="Label" type="Label" parent="Buttons/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -141,10 +164,6 @@ theme_override_font_sizes/font_size = 35
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_5pab1")
-pitch_scale = 0.68
-bus = &"SFX"
-
-[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Buttons/Settings" to="." method="_on_settings_pressed"]

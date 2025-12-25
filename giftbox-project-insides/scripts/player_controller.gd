@@ -21,10 +21,11 @@ func _physics_process(delta) -> void:
 	
 	if (velocity.x > 1 or velocity.x <-1):
 		panda.play("walk")
-		steps.play()
+		if not steps.playing:
+			steps.play()
 	else:
 		panda.play("idle")
-	# Add the gravity.
+		steps.stop()
 	
 	# Add the gravity.
 	if not is_on_floor():

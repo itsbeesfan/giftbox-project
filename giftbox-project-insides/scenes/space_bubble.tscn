@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpmyjwt5niuad"]
+[gd_scene load_steps=5 format=3 uid="uid://cpmyjwt5niuad"]
 
-[ext_resource type="Script" uid="uid://cnrqlumq25tei" path="res://scenes/space_bubble.gd" id="1_5vtqn"]
+[ext_resource type="Script" uid="uid://cnrqlumq25tei" path="res://scripts/space_bubble.gd" id="1_5vtqn"]
 [ext_resource type="Texture2D" uid="uid://bycphpswl6lsp" path="res://sprites/bubble.png" id="1_xw7gf"]
+[ext_resource type="AudioStream" uid="uid://bl6y8n74litox" path="res://sounds/sfx/boing-sfx.mp3" id="3_usgk6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vtqn"]
 radius = 13.152946
@@ -14,5 +15,11 @@ texture = ExtResource("1_xw7gf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5vtqn")
+
+[node name="BoingSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_usgk6")
+volume_db = 0.505
+pitch_scale = 1.18
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
