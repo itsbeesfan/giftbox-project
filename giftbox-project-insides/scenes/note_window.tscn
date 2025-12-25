@@ -4,7 +4,14 @@
 [ext_resource type="FontFile" uid="uid://bklgmiflftow0" path="res://fonts/aseprite.otf" id="2_qpr4w"]
 
 [node name="note_window" type="CanvasLayer"]
-visible = false
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.5294118)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 327.0
