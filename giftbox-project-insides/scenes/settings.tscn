@@ -75,7 +75,7 @@ theme_override_font_sizes/font_size = 21
 text = "BACK"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="MusicSlider" type="HSlider" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -88,3 +88,18 @@ offset_right = 137.25
 offset_bottom = 8.169998
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="SFXSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.43100002
+anchor_right = 0.5
+anchor_bottom = 0.43100002
+offset_left = -137.25
+offset_top = -8.194992
+offset_right = 137.25
+offset_bottom = 7.805008
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0002882838
