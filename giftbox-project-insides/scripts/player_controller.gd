@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var air_control := 0.75
 
 @onready var panda = $AnimatedSprite2D
+@onready var steps = $FootstepsSFX
 
 var can_move := true
 const SPEED = 250.0
@@ -20,6 +21,7 @@ func _physics_process(delta) -> void:
 	
 	if (velocity.x > 1 or velocity.x <-1):
 		panda.play("walk")
+		steps.play()
 	else:
 		panda.play("idle")
 	# Add the gravity.

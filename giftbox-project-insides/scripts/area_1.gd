@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var note_window = $note_window
 @onready var note_text = $note_window/TextureRect/RichTextLabel
+@onready var papel = $NoteSFX
 
 var current_note = null
 var reading := false
@@ -12,6 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("open"):
+		papel.play()
 		print("PRESIONASTE EEEE EPAAA")
 		if reading:
 			close_note()

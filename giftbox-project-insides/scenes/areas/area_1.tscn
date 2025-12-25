@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3pao7he67ks5"]
+[gd_scene load_steps=14 format=3 uid="uid://b3pao7he67ks5"]
 
 [ext_resource type="Texture2D" uid="uid://blo236sn36ena" path="res://sprites/1_Industrial_Tileset_1.png" id="1_1gyh0"]
-[ext_resource type="Script" path="res://scripts/area_1.gd" id="1_ay52s"]
+[ext_resource type="Script" uid="uid://ecnatl5qacxj" path="res://scripts/area_1.gd" id="1_ay52s"]
 [ext_resource type="Texture2D" uid="uid://dgudkwarryj8k" path="res://sprites/Blue_Nebula_02-512x512.png" id="1_h3qae"]
 [ext_resource type="PackedScene" uid="uid://ng2ojdgtrlou" path="res://scenes/player.tscn" id="2_dgl8q"]
 [ext_resource type="PackedScene" uid="uid://myc8c2n875cg" path="res://scenes/note.tscn" id="5_hvyvl"]
 [ext_resource type="PackedScene" uid="uid://cpmyjwt5niuad" path="res://scenes/space_bubble.tscn" id="6_4pcq1"]
 [ext_resource type="PackedScene" uid="uid://be3yfcmqwbspa" path="res://scenes/note_window.tscn" id="6_eme25"]
 [ext_resource type="AudioStream" uid="uid://b2emnv0wgkns1" path="res://sounds/music/Skyline To - Frank Ocean (Instrumental).mp3" id="8_vq5v6"]
+[ext_resource type="AudioStream" uid="uid://1vfncbhxvli8" path="res://sounds/sfx/note-sfx.mp3" id="9_e031j"]
+[ext_resource type="AudioStream" uid="uid://de6aie6tyxqvf" path="res://sounds/sfx/select-sfx.mp3" id="10_tfgmq"]
+[ext_resource type="AudioStream" uid="uid://bgllrpgu7i2et" path="res://sounds/sfx/footsteps-sfx.mp3" id="11_a4iv5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dgl8q"]
 texture = ExtResource("1_1gyh0")
@@ -242,6 +245,12 @@ message = "welcome to your observatory. the galaxy seems so big from here. look 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("2_dgl8q")]
 position = Vector2(67, 340)
 
+[node name="FootstepsSFX" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("11_a4iv5")
+volume_db = 18.0
+attenuation = 0.21763763
+bus = &"SFX"
+
 [node name="spacebubble" parent="." instance=ExtResource("6_4pcq1")]
 position = Vector2(1560, 515)
 
@@ -251,7 +260,23 @@ position = Vector2(1772, 515)
 [node name="note_window" parent="." instance=ExtResource("6_eme25")]
 visible = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vq5v6")
 autoplay = true
 bus = &"Music"
+
+[node name="NoteSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_e031j")
+volume_db = 3.029
+pitch_scale = 0.67
+attenuation = 0.70710766
+bus = &"SFX"
+
+[node name="SelectSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_tfgmq")
+bus = &"SFX"
+
+[node name="FootstepsSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_a4iv5")
+volume_db = -3.534
+bus = &"SFX"

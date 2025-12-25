@@ -1,5 +1,7 @@
 extends Control
 
+@onready var select = $AudioStreamPlayer
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,8 +14,10 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
+	select.play()
 	get_tree().change_scene_to_file("res://scenes/areas/area_1.tscn")
 
 
 func _on_quit_pressed() -> void:
+	select.play()
 	get_tree().quit()

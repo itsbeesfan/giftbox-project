@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfkpyhgpwrppw"]
+[gd_scene load_steps=7 format=3 uid="uid://cfkpyhgpwrppw"]
 
 [ext_resource type="Script" uid="uid://o5u7xm06ko0o" path="res://scripts/start_screen.gd" id="1_tx5wa"]
 [ext_resource type="Texture2D" uid="uid://c6y5r15qe5axe" path="res://sprites/button-normal.png" id="2_r2jwc"]
 [ext_resource type="Texture2D" uid="uid://c5uugew4wdbgy" path="res://sprites/button-pressed.png" id="3_hm208"]
 [ext_resource type="Texture2D" uid="uid://bpnnxgvwgpi4" path="res://sprites/button-hovered.png" id="4_5pab1"]
 [ext_resource type="FontFile" uid="uid://bklgmiflftow0" path="res://fonts/aseprite.otf" id="5_hm208"]
+[ext_resource type="AudioStream" uid="uid://de6aie6tyxqvf" path="res://sounds/sfx/select-sfx.mp3" id="6_5pab1"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -139,6 +140,10 @@ theme_override_fonts/font = ExtResource("5_hm208")
 theme_override_font_sizes/font_size = 35
 text = "SETTINGS"
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5pab1")
+pitch_scale = 0.68
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
