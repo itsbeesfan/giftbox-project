@@ -26,7 +26,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_es4n0")
 script = ExtResource("2_83j8s")
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -87,7 +87,7 @@ anchor_left = 0.5
 anchor_top = 0.314
 anchor_right = 0.5
 anchor_bottom = 0.314
-offset_left = -137.25
+offset_left = -88.0
 offset_top = -7.830002
 offset_right = 137.25
 offset_bottom = 8.169998
@@ -99,6 +99,22 @@ value = 1.0
 script = ExtResource("7_am25x")
 audio_bus_name = "Music"
 
+[node name="MusicLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24100001
+anchor_top = 0.321
+anchor_right = 0.24100001
+anchor_bottom = 0.321
+offset_left = -1.550003
+offset_top = -9.245003
+offset_right = 46.449997
+offset_bottom = 8.754997
+theme_override_fonts/font = ExtResource("2_gis3k")
+theme_override_font_sizes/font_size = 14
+text = "Music"
+horizontal_alignment = 2
+
 [node name="SFXSlider" type="HSlider" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -106,10 +122,10 @@ anchor_left = 0.5
 anchor_top = 0.43100002
 anchor_right = 0.5
 anchor_bottom = 0.43100002
-offset_left = -137.25
-offset_top = -8.194992
+offset_left = -88.25821
+offset_top = -8.180862
 offset_right = 137.25
-offset_bottom = 7.805008
+offset_bottom = 7.9450073
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.0002882838
@@ -119,10 +135,45 @@ value = 1.0
 script = ExtResource("8_4ppmf")
 audio_bus_name = "SFX"
 
+[node name="SFXLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.24100001
+anchor_top = 0.321
+anchor_right = 0.24100001
+anchor_bottom = 0.321
+offset_left = -1.550003
+offset_top = 30.754997
+offset_right = 46.449997
+offset_bottom = 48.754997
+theme_override_fonts/font = ExtResource("2_gis3k")
+theme_override_font_sizes/font_size = 14
+text = "SFX"
+horizontal_alignment = 2
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_83j8s")
 pitch_scale = 0.68
 bus = &"SFX"
+
+[node name="instructions" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.66
+anchor_right = 0.5
+anchor_bottom = 0.66
+offset_left = -160.5
+offset_top = -21.575012
+offset_right = 160.5
+offset_bottom = 21.799988
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_gis3k")
+theme_override_font_sizes/font_size = 14
+text = "use WASD or your arrow keys to move,
+ space to jump, and E to open notes!"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
 [connection signal="value_changed" from="MusicSlider" to="MusicSlider" method="_on_value_changed"]

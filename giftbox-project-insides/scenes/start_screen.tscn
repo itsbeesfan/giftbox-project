@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfkpyhgpwrppw"]
+[gd_scene load_steps=9 format=3 uid="uid://cfkpyhgpwrppw"]
 
 [ext_resource type="Script" uid="uid://o5u7xm06ko0o" path="res://scripts/start_screen.gd" id="1_tx5wa"]
+[ext_resource type="Texture2D" uid="uid://dgudkwarryj8k" path="res://sprites/Blue_Nebula_02-512x512.png" id="2_ka6nf"]
 [ext_resource type="Texture2D" uid="uid://c6y5r15qe5axe" path="res://sprites/button-normal.png" id="2_r2jwc"]
 [ext_resource type="Texture2D" uid="uid://c5uugew4wdbgy" path="res://sprites/button-pressed.png" id="3_hm208"]
 [ext_resource type="Texture2D" uid="uid://bpnnxgvwgpi4" path="res://sprites/button-hovered.png" id="4_5pab1"]
@@ -17,13 +18,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tx5wa")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="TextureRect" parent="."]
+modulate = Color(0.4117647, 0.4117647, 0.4117647, 0.84313726)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_ka6nf")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -162,6 +165,23 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_hm208")
 theme_override_font_sizes/font_size = 35
 text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.5
+offset_top = -23.0
+offset_right = 138.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_hm208")
+theme_override_font_sizes/font_size = 14
+text = "made with <3 by tatiana (@beesfan)"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="Buttons/Start" to="." method="_on_start_pressed"]
