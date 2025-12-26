@@ -36,7 +36,7 @@ touching the bubbles (boing) and when pressing main buttons (select).
 (_ohhh that was long_)
 
 ### _challenges and learning opportunities:_
--**i had to digest a LOT of content and "research"**. since this was my first godot game,
+- **i had to digest a LOT of content and "research"**. since this was my first godot game,
 there were a lot of things i didn't know how to do, so tutorials, godot guides, and forums
 were my best friends through this.
 - **art**. simply art. im not an artist, so drawing sprites and keeping a consistent color
