@@ -17,6 +17,14 @@ func _process(delta: float) -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	open_settings()
+	
+func open_settings():
 	settings_panel.visible = true
 	settings_icon.visible = false
 	dimmer.visible = true
+
+func close_settings():
+	settings_panel.visible = false
+	settings_icon.visible = true
+	dimmer.visible = false

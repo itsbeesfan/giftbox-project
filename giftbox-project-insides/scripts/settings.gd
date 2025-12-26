@@ -1,5 +1,8 @@
 extends TextureRect
 
+@export_enum("menu", "game") var context := "menu"
+
+
 @onready var sfx = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
@@ -14,4 +17,8 @@ func _process(delta: float) -> void:
 
 func _on_texture_button_pressed() -> void:
 	sfx.play()
-	get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	
+	if context == "menu":
+		get_tree().change_scene_to_file("res://scenes/start_screen.tscn")
+	else:
+		get_parent().close_settings()
